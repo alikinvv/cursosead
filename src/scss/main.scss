@@ -2083,6 +2083,10 @@ body {
 }
 
 iframe {
+	@include r(555) {
+		width: 90% !important;
+	}
+	
 	position: fixed !important;
 	width: 535px !important;
 	z-index: 12;
