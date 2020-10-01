@@ -2081,3 +2081,33 @@ body {
 		display: none;
 	}
 }
+
+iframe {
+	position: fixed !important;
+	width: 535px !important;
+	z-index: 12;
+	display: none;
+	height: 319px !important;
+	right: initial !important;
+
+	&.active {
+		display: block;
+	}
+}
+
+.backdrops {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	background: #000;
+	opacity: .3;
+	display: none;
+	cursor: pointer;
+
+	&.active {
+		display: block;
+	}
+}

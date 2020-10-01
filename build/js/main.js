@@ -113,5 +113,20 @@ $('body').on('click', '.header__mobile, .header__menu img', (e) => {
   $('.header__mobile').toggleClass('active');
   $('.header__menu').toggleClass('active');
   $('.header__menu').slideToggle();
-  //gsap.to($('.header__menu'), 3, {display: 'flex'});
+});
+
+$('body').append('<div class="backdrops"></div>');
+
+gsap.set($('iframe'), {display: 'none', opacity: 0 });
+gsap.set($('.backdrops'), {display: 'none', opacity: 0 });
+
+$('body').on('click', '.btn', (e) => {
+  gsap.to($('iframe'), 0.5, {display: 'block', opacity: 1 });
+  gsap.to($('.backdrops'), 0.5, {display: 'block', opacity: 0.3 });
+  $('iframe').css('top', `${($(window).height() / 2) - ($('iframe').height() / 2)}px`).css('left', `${($(window).width() / 2) - ($('iframe').width() / 2)}px`);
+});
+
+$('body').on('click', '.backdrops', (e) => {
+  gsap.to($('iframe'), 0.5, { display: 'none', opacity: 0  });
+  gsap.to($('.backdrops'), 0.5, { display: 'none', opacity: 0  });
 });
